@@ -1,2 +1,4 @@
-# 01_javascript-basic
- 2023年　後期「JavaScript基礎」授業課題
+# 2023年　後期「JavaScript基礎」授業課題
+
+##　授業内コード
+1.10月5日（木）はじめの一歩
