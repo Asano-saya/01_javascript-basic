@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <dl class="recipe">
+        <dt>カップヌードルの作り方</dt>
+        <dd>フタを途中まで開ける</dd>
+        <dd>お湯を線まで入れてフタをする</dd>
+    </dl>
+    <script>
+        //dlの要素を取り入れる
+        const element = document.querySelector("dl");
+        console.log(element);
+        //ddを作る
+        const lilast = document.createElement("dd");
+        console.log(lilast);
+        //追加する内容を入れる
+        lilast.textContent = "3分待って出来上がり";
+        console.log(lilast);
+        //追加する
+        element.appendChild(lilast);
+    </script>
+
+</body>
+
+</html>

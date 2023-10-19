@@ -4,7 +4,60 @@
 
 1. 10月5日（木）はじめの一歩
 2. 10月5日（木）GitHub リポジトリ作成
-3. 10月12日（木）
+3. 10月12日（木）documentオブジェクトとDOM
+4. 10月19日 (木) documentオブジェクトとDOM
+
+## 10月　１９日
+- documentオブジェクトとDOM
+- for文
+
+### 要素の取得、新しい要素を作る、オブジェクトに要素を入れる
+```js
+//dlの要素を取り入れる
+const element = document.querySelector("dl");
+console.log(element);
+//ddを作る
+const lilast = document.createElement("dd");
+console.log(lilast);
+//追加する内容を入れる
+lilast.textContent = "3分待って出来上がり";
+console.log(lilast);
+//追加する
+element.appendChild(lilast);
+ ```
+### 配列の宣言・代入、取得、長さ
+ ```js
+ //　宣言、代入
+ const animals;
+ animals= ["dog","cat","bird"];
+ //取得
+ console.log(animals[1]);
+ //長さ
+ console.log(animals.length);
+ ```
+
+ ### for文を使って要素を追加
+ ```js
+ //ulの中に果物一覧をliで入れたい
+//配列fruitsを宣言・代入
+const fruits = ["りんご", "もも", "バナナ"];
+//ulをjavascript空間に入れる
+const element = document.querySelector("#fruitslist");
+console.log(element);
+//fruitsの要素数分だけfor文で回す
+for (let i = 0; i < fruits.length; i++) {
+    //liを創出する
+     const lilast = document.createElement("li");
+    //liに値を代入
+    console.log(fruits[i]);
+    lilast.textContent = fruits[i];
+    //elementの中の最後に追加
+    element.appendChild(lilast);
+    }
+ ```
+
+
+
 
 ## 10月12日
 
