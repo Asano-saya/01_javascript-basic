@@ -7,7 +7,7 @@
 3. 10月12日（木）documentオブジェクトとDOM
 4. 10月19日 (木) documentオブジェクトとDOM
 
-## 10月　１９日
+## 10月1９日
 - documentオブジェクトとDOM
 - for文
 
