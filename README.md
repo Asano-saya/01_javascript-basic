@@ -6,7 +6,15 @@
 2. 10月5日（木）GitHub リポジトリ作成
 3. 10月12日（木）documentオブジェクトとDOM
 4. 10月19日 (木) documentオブジェクトとDOM
+5. 10月26日　(木)　documentオブジェクトとDOM
 
+## 10月26日
+- querySelectorAll
+- getElementById
+- getElementsByTagName(), getElementsByClassName()
+- innerHTML
+
+###
 ## 10月1９日
 - documentオブジェクトとDOM
 - for文
