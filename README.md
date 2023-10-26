@@ -13,8 +13,94 @@
 - getElementById
 - getElementsByTagName(), getElementsByClassName()
 - innerHTML
+- イベント
 
+###　指定された CSS セレクターに一致する文書中の要素のリストを示す
+```js
+const nations_list = document.querySelectorAll("ul li");
+//もしくは、document.querySelectorAll("#toparis li");などでも可
+console.log(nations_list);
+```
+### id プロパティ（id 属性）が指定された文字列に一致する要素を表す Element オブジェクトを返す
+```js
+const id_element = document.getElementById("toparis");
+console.log(id_element);
+```
+### 指定されたタグ名を持つ要素や指定されたクラス名をすべて持つすべての子要素の動的オブジェクト HTMLCollection を返す
+```js
+const tag_element = document.getElementsByTagName("li");
+console.log(tag_element);
+const class_element = document.getElementsByClassName("pool_b");
+console.log(class_element);
+```
+### 要素のすべての子孫を削除して、htmlString の文字列で与えられた HTML を解釈して構築されたノードに置き換える
+```js
+
+  const sweetpotatos = document.querySelector(".imo");
+
+  //innerHTMLプロパティで、中身を確認
+  console.log(sweetpotatos.innerHTML);
+
+  //innerHTMLに文字列でHTMLのタグを代入する。
+  sweetpotatos.innerHTML = "<li>べにはるか</li>";
+  //このままだと全部入れ替わる　
+  //複合代入演算子+=を使う
+　sweetpotatos.innerHTML += "<li>べにはるか</li>";
+
+```
 ###
+### 文字の色を変える
+```js
+//Javascriptの中に必要な要素を全部取得
+        //文字の色を変えてみましょう。
+        //ボタンを取得する
+        const redBtn = document.querySelector(".red");
+        const blueBtn = document.querySelector(".blue");
+        const yellowBtn = document.querySelector(".yellow");
+
+
+        //文字を取得する
+        const text = document.querySelector(".text");
+        const textSpan = document.querySelector(".text span");
+
+        //ボタンにclickイベントを設定する
+        redBtn.addEventListener("click", function () {
+            console.dir(text);
+            text.style.color = "red";
+            textSpan.innerText = "赤"
+
+        })
+        yellowBtn.addEventListener("click", function () {
+            console.log(text);
+            text.style.color = "yellow";
+            textSpan.innerText = "黃";
+        })
+        blueBtn.addEventListener("click", function () {
+            console.log(text);
+            text.style.color = "blue";
+            textSpan.innerText = "青";
+        })
+        // function (){}関数を使わずに処理することが出来る
+```
+### イベントリスナで登録
+```js
+<p><span>JavaScript</span>（ジャバスクリプト）とは、プログラミング言語のひとつである。</p>
+    <button class="redder">赤くなる</button>
+    <button class="bigger">大きくなる</button>
+
+    <script>
+        const text = document.querySelector("p span")
+        const redBtn = document.querySelector(".redder");
+        redBtn.addEventListener("click", function () {
+            text.setAttribute("class", "redText")
+        })
+
+        const bigBtn = document.querySelector(".bigger");
+        bigBtn.addEventListener("click", function () {
+            text.setAttribute("class", "bigText");
+        })
+```
+
 ## 10月1９日
 - documentオブジェクトとDOM
 - for文
