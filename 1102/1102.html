@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>属性の操作</title>
+    <style>
+        body {
+            width: 100%;
+            height: 100vh;
+        }
+
+        .red {
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="title">タイトル</h1>
+    <script>
+        //javascript内に持ってくる
+        const h1_element = document.querySelector("h1");
+        console.dir(h1_element);
+
+        //hasAttribute
+        //classという属性を持っているかどうか確かめる
+        const has_result = h1_element.hasAttribute("class");
+        console.log(has_result);
+
+        //getAttribute
+        //classの値を判定
+        const get_result = h1_element.getAttribute("class");
+        console.log(get_result);//classの値
+
+        //className
+        //classの中の名前を変えることが出来る
+        h1_element.className = "sitename";
+
+        //classList.add classを加えるとき
+        h1_element.classList.add("w-full");
+
+        //elem.classList.remove("class値"); //クラスの削除をします。
+        h1_element.classList.remove("sitename");
+
+        //elem.classList.toggle("class値"); //クラスが存在する場合は削除します。なければ追加します。
+        const body_element = document.body;
+        body_element.addEventListener("click", function () {
+            body_element.classList.toggle("red");
+        });
+
+        //elem.classList.contains("class値"); //クラスをの有無をチェックし、true/falseを返します。
+        const contains_result = h1_element.classList.contains("sitename");
+        console.log(contains_result);
+
+    </script>
+
+</body>
+
+</html>

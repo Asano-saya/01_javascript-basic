@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+  <h1 id="header">ヘッドスピン</h1>
+
+  <div class="btnArea">
+    <div class="button dancing">Let’sダンス</div>
+    <div class="button stop">ストップ</div>
+    <div class="button change">ダンサーチェンジ</div>
+  </div>
+  <div class="imgArea">
+    <img src="images/dance_breakdance_headspin.png" alt="ブレイクダンサーいらすと" />
+  </div>
+  <script>
+    //ここに記述します。
+    //1
+    const dancingBtn = document.querySelector(".dancing");
+    const stopBtn = document.querySelector(".stop");
+    const changeBtn = document.querySelector(".change");
+    //console.log(dancingBtn);
+
+    //2
+    const dancer = document.querySelector(".imgArea img");
+    //console.log(dancer);
+
+    //3
+    dancingBtn.addEventListener("click", function () {
+      dancer.setAttribute("class", "dance");
+    });
+    //dancingBtnにクリックしたら、画像が回るようにするためにクラスをdanceに変える。
+
+    //4
+    stopBtn.addEventListener("click", function () {
+      dancer.removeAttribute("class");
+    });
+
+
+    //5
+    changeBtn.addEventListener("click", function () {
+      dancer.setAttribute("src", "images/ballet_woman.png");
+    });
+
+  </script>
+</body>
+
+</html>

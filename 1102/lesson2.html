@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>イベント演習②</title>
+    <style>
+        .redText {
+            color: red;
+        }
+
+        .bigText {
+            font-size: 25px;
+        }
+    </style>
+</head>
+
+<body>
+    <p><span>JavaScript</span>（ジャバスクリプト）とは、プログラミング言語のひとつである。</p>
+    <button class="redder">赤くなる</button>
+    <button class="bigger">大きくなる</button>
+
+    <script>
+        const text = document.querySelector("p span")
+        const redBtn = document.querySelector(".redder");
+        redBtn.addEventListener("click", function () {
+            text.classList.toggle("redText");
+            //redBtn.textContent = "もとに戻す"
+            /*if(text.classList.contains("redText")){
+                redBtn.innerText = "もとに戻す"
+            }
+            else{
+                redBtn.innerText = "赤くなる"
+            }
+            */
+            redBtn.innerText = "もとに戻す"
+        })
+
+        const bigBtn = document.querySelector(".bigger");
+        bigBtn.addEventListener("click", function () {
+            text.classList.toggle("bigText");
+
+            bigBtn.innerText = "もとに戻す"
+        })
+
+
+    </script>
+
+</body>
+
+</html>

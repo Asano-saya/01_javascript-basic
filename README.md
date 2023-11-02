@@ -7,7 +7,10 @@
 3. 10月12日（木）documentオブジェクトとDOM
 4. 10月19日 (木) documentオブジェクトとDOM
 5. 10月26日　(木)　documentオブジェクトとDOM
+6. 11月02日　(木)　イベント
 
+## 11月02日
+-
 ## 10月26日
 - querySelectorAll
 - getElementById
@@ -15,6 +18,35 @@
 - innerHTML
 - イベント
 
+### イベント
+```js
+ //1 ボタンの取得
+    const dancingBtn = document.querySelector(".dancing");
+    const stopBtn = document.querySelector(".stop");
+    const changeBtn = document.querySelector(".change");
+    //console.log(dancingBtn);
+
+    //2　画像の取得
+    const dancer = document.querySelector(".imgArea img");
+    //console.log(dancer);
+
+    //3　イベント設定
+    dancingBtn.addEventListener("click", function () {
+      dancer.setAttribute("class", "dance");
+    });
+    //dancingBtnにクリックしたら、画像が回るようにするためにクラスをdanceに変える。
+
+    //4　イベント設定
+    stopBtn.addEventListener("click", function () {
+      dancer.removeAttribute("class");
+    });
+
+
+    //5　イベント設定
+    changeBtn.addEventListener("click", function () {
+      dancer.setAttribute("src", "images/ballet_woman.png");
+    });
+```
 ###　指定された CSS セレクターに一致する文書中の要素のリストを示す
 ```js
 const nations_list = document.querySelectorAll("ul li");
