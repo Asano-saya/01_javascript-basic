@@ -33,7 +33,7 @@
 
     //NodeList なので for 文でそれぞれのボタンに click イベントを登録する。(addEventListener)
     for (let i = 0; i = fujiBtn.length; i++) {
-      fujiBtn[i].addEventListener("click", function () {
+      fujiBtn.addEventListener("click", function () {
         fuji_img.setAttribute("src", fujiImg_list[i]);
       });
     }
