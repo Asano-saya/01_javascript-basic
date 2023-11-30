@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>関数</title>
+</head>
+
+<body>
+    <ul>
+        <li>犬</li>
+        <li>猫</li>
+    </ul>
+    <p class="result"></p>
+
+    <div class="fnArea"></div>
+    <script>
+        const dog = document.querySelector("li");
+        const cat = document.querySelector("li:nth-child(2)")
+        const text = document.querySelector(".result");
+        console.log(dog, cat, text);
+
+        const animalsCheck = function (animals) {
+            text.textContent = "あなたは," + animals + "派です。";
+        }
+
+        dog.addEventListener("click", function () {
+            console.dir(this);
+            animalsCheck(this.textContent);
+        })
+
+        cat.addEventListener("click", function () {
+            console.dir(this);
+            animalsCheck(this.textContent);
+        })
+
+        const yoshinoya = function (menu, size, option, price) {
+            console.log(menu + "の" + size + "," + option + "で" + price + "円です。")
+        }
+
+        //関数の実行
+        yoshinoya("牛丼", "並盛", "つゆだく", 388); //牛丼の並盛、つゆだくで 388 円
+        yoshinoya("豚丼", "大盛", "たまご", 592); //豚丼の大盛、たまごで 592 円
+
+        //引数が配列
+        const sumCard = function (card) {
+            console.log(card);
+            let total = 0;
+            for (let i = 0; i < card.length; i++) {
+                total += card[i]; //toral = total + card[i]
+            }
+            console.log(total);
+        };
+        //配列
+        const card_list = [1, 2, 3, 4];
+        //関数の実行、引数
+        sumCard(card_list); //10
+
+
+        const member_list = ["チェウォン", "サクラ", "ユンジン", "カズハ", "ウンチェ"];
+        const mugiwara_list = ["モンキー・D・ルフィ", "ナミ", "ロロノア・ゾロ", "ヴィンスモーク・サンジ", "ウソップ", "トニートニー・チョッパー", "ニコ・ロビン", "フランキー", "ブルック", "ジンベエ"];
+
+        //.fnAreaに上記の配列の要素を<li>で追加する関数
+        const memberArea = document.querySelector(".fnArea");
+        const memberPush = function (member) {
+            //memberAreaにul,liで書くメンバーを入れる
+            console.log(member);
+            //ulを作る
+            const ulelement = document.createElement("ul");
+            console.log(ulelement);
+
+            for (let i = 0; i < member.length; i++) {
+                //liを作る
+                const lielement = document.createElement("li");
+                //liの中に配列を入れる
+                lielement.textContent = member[i];
+                console.log(member[i]);
+
+                //ulの中に入れる
+                ulelement.appendChild(lielement);
+
+            }
+
+
+
+
+
+
+        }
+
+        //関数の実行
+        memberPush(member_list);
+        memberPush(mugiwara_list);
+
+
+
+    </script>
+
+</body>
+
+</html>
