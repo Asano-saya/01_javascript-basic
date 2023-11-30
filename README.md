@@ -8,9 +8,126 @@
 4. 10月19日 (木) documentオブジェクトとDOM
 5. 10月26日　(木)　documentオブジェクトとDOM
 6. 11月02日　(木)　イベント
+7. 11月09日 (木) if文
+8. 11月16日　(木)
 
-## 11月02日
+## 11月16日
 -
+## 11月09日
+- if文
+```js
+const num = Math.round(Math.random() * 100);
+        console.log("現在の値：" + num);
+        const rem = num % 2;
+        //偶数を表示するif文
+        if (rem == 0) {
+            console.log(num + "は偶数です。");
+        } else {
+            console.log(num + "は奇数です。");
+        }
+
+
+        if文による条件分岐*/
+        const num = 10;
+        //条件分岐 ※行コメント
+        if (num >= 100) {
+            document.body.insertAdjacentHTML("beforeEnd", "<p>numは100以上</p>");
+        } else if (num === 0) {
+            document.body.insertAdjacentHTML("beforeEnd", "<p>numは0です</p>");
+        } else {
+            document.body.insertAdjacentHTML("beforeEnd", "<p>numは100未満</p>");
+        }
+
+
+         const widthsize = window.innerWidth; //現在のブラウザの横幅
+        console.log(widthsize);
+        //以下から記述していきます。
+        document.body.addEventListener("click", function (event) {
+            //クリックしたx軸の数値が取れる
+            console.log(event.clientX);
+            if (event.clientX < widthsize / 2) {
+                console.log("左");
+                const creatElement = document.querySelector(".leftZone");
+                console.log(creatElement);
+                const lilast = document.createElement("li");
+                lilast.textContent = "左"
+                creatElement.appendChild(lilast);
+
+            } else {
+                console.log("右")
+                const createElement = document.querySelector(".rightZone");
+                const lilast = document.createElement("li");
+                lilast.textContent = "右";
+                createElement.appendChild(lilast);
+
+            }
+        });
+```
+## 11月02日
+-　
+``` js
+//javascript内に持ってくる
+        const h1_element = document.querySelector("h1");
+        console.dir(h1_element);
+
+        //hasAttribute
+        //classという属性を持っているかどうか確かめる
+        const has_result = h1_element.hasAttribute("class");
+        console.log(has_result);
+
+        //getAttribute
+        //classの値を判定
+        const get_result = h1_element.getAttribute("class");
+        console.log(get_result);//classの値
+
+        //className
+        //classの中の名前を変えることが出来る
+        h1_element.className = "sitename";
+
+        //classList.add classを加えるとき
+        h1_element.classList.add("w-full");
+
+        //elem.classList.remove("class値"); //クラスの削除をします。
+        h1_element.classList.remove("sitename");
+
+        //elem.classList.toggle("class値"); //クラスが存在する場合は削除します。なければ追加します。
+        const body_element = document.body;
+        body_element.addEventListener("click", function () {
+            body_element.classList.toggle("red");
+        });
+
+        //elem.classList.contains("class値"); //クラスをの有無をチェックし、true/falseを返します。
+        const contains_result = h1_element.classList.contains("sitename");
+        console.log(contains_result);
+
+
+        const text = document.querySelector("p span")
+        const redBtn = document.querySelector(".redder");
+        redBtn.addEventListener("click", function () {
+            text.classList.toggle("redText");
+            //redBtn.textContent = "もとに戻す"
+            /*if(text.classList.contains("redText")){
+                redBtn.innerText = "もとに戻す"
+            }
+            else{
+                redBtn.innerText = "赤くなる"
+            }
+            */
+            redBtn.innerText = "もとに戻す"
+        })
+
+        const bigBtn = document.querySelector(".bigger");
+        bigBtn.addEventListener("click", function () {
+            text.classList.toggle("bigText");
+
+            bigBtn.innerText = "もとに戻す"
+        })
+
+
+
+ ```
+
+
 ## 10月26日
 - querySelectorAll
 - getElementById

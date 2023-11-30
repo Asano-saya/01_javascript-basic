@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <h1 style="text-align: center;">48</h1>
+    <button style="margin: auto; display: block;">レッツゴー</button>
+    <script>
+        const akbsites = ["https://www.akb48.co.jp/", "https://www.ske48.co.jp/", "http://www.nmb48.com/", "http://www.hkt48.jp/"];
+        document.querySelector("button").addEventListener("click", function () {
+            //0〜３の数値
+            const title = Math.floor(Math.random() * 4);
+            //必要な要素を取得
+            const h1Elm = document.querySelector("h1");
+            const alink = document.createElement('a');
+            //数値に1を足す
+            alink.innerText = title + 1;
+
+            //ここに記述します。
+            if (title === 1) {
+                alink.setAttribute("a", akbsites[0]);
+            } else if (title === 2) {
+                alink.setAttribute("a", akbsites[1]);
+            } else if (title === 3) {
+                alink.setAttribute("a", akbsites[2]);
+            } else {
+                alink.setAttribute("a", akbsites[3]);
+            }
+
+
+            //ここまで
+
+            //h1の中身をノードで入れ替える
+            h1Elm.replaceChildren(alink);
+        })
+    </script>
+
+
+
+
+
+    <script>
+        /*
+        const school = "トライデントコンピュータ専門学校";
+        console.log("school");
+        const course = "Webデザイン学科";
+        console.log(school + course);
+        */
+
+        //const catImg = document.querySelector(".img_cat");
+
+        /*
+        const goranger = ["アカレンジャー", "アオレンジャー", "ミドリレンジャー", "キレンジャー", "モモレンジャー"];
+        console.log(goranger[4]);
+        for (let i = 0; i < goranger.length; i++) {
+            console.log(goranger[i]);
+        }
+        */
+
+        /*
+        const text = document.querySelector("span");
+        text.addEventListener("click", function () {
+            console.log("span");
+        })
+        */
+
+        /*
+        const btn = document.querySelector("button");
+        console.log(btn);
+
+        const gnav = document.querySelector(".globalmenu");
+        console.log(gnav);
+        btn.addEventListener("click", function () {
+
+            gnav.classList.toggle("open");
+        });
+        */
+
+
+
+        // span要素を取得
+        const tridentSchoolSpan = document.getElementById('tridentSchool');
+
+        // span要素がクリックされたときの処理
+        tridentSchoolSpan.addEventListener('click', function () {
+            // テキストをコンソールに表示
+            console.log(tridentSchoolSpan.textContent);
+
+            // 文字を赤く、太くする
+            tridentSchoolSpan.classList.add('clicked');
+        });
+        * /
+    </script>
+
+</body>
+
+</html>
