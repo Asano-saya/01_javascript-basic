@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>グローバル変数</title>
+</head>
+
+<body>
+    <h1>グローバルスコープ、ローカルスコープ</h1>
+
+
+    <script>
+        /*
+        const globalData = "hogehoge";//グローバル変数
+        const foobaa = function () {
+            const localData = "fugafuga";
+        };
+
+        console.log(globalData);//表示される
+        console.log(localData); //ローカルスコープなのでエラー
+        */
+        const globalData = "hogehoge";//グローバル変数
+        const foobaa = function () {
+            const globalData = "fugafuga";//ローカル変数だがグローバル変数と変数名が同じ
+            console.log(globalData);//fugafuga *ローカル変数はグローバルよりも優先される　かつ　外にはもれない
+
+        };
+        console.log(globalData);//hogehoge　*グローバル変数
+        //関数の中だけでなく{}内でしか使えない
+        //外に出したいときはreturnを使う
+    </script>
+</body>
+
+</html>

@@ -14,6 +14,7 @@
         <li>猫</li>
     </ul>
     <p class="result"></p>
+    <button class="lesserafim">ルセラフィムメンバー</button>
 
     <div class="fnArea"></div>
     <script>
@@ -81,18 +82,38 @@
                 //ulの中に入れる
                 ulelement.appendChild(lielement);
 
+                memberArea.appendChild(ulelement);
             }
 
-
-
-
-
-
         }
+        const lesserafimBtn = document.querySelector(".lesserafim");
+        lesserafimBtn.addEventListener("click", function () {
+            console.log("ルセラフィム");
+            memberPush(member_list);
+
+        });
 
         //関数の実行
         memberPush(member_list);
         memberPush(mugiwara_list);
+
+        //引数１と引数２を足す、関数の定義
+        const addition = function (a, b) {
+            const c = a + b;
+            console.log(c);
+        }
+
+        //関数の実行
+        addition(30, "6");
+
+        //戻り値のある関数の定義
+        const addition2 = function (a, b) {
+            const c = a * b;
+            return c; //戻り値
+        }
+        //関数の実行
+        const result = addition2(5, 5); //25
+        console.log(result);
 
 
 
