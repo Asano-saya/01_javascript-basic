@@ -12,7 +12,45 @@
 8. 11月16日　(木)
 9. 11月30日　関数
 10. 12月07日　関数式、引数、戻り値、
+11. 12月14日　コールバック関数、アロー関数
 
+
+## 1214
+
+- コールバック関数
+```js
+　　　　const testFunc = function (func) {//func＝callback
+        //実行後すぐに表示
+        console.log("");
+        　setTimeout(function () {//無名関数　直接入れてしまうとすぐに実行されてしまうからfunction()を使う　その中に関数の実行を書く
+　　　　　　　func();
+        　}, 2000);//２秒後にfunc()が実行
+        };
+        //関数式２
+        const callback = function () {
+            console.log("");
+        };
+        //関数式１を実行
+        testFunc(callback);//callbackが関数式１の引数のfuncの中に入る
+```
+- アロー関数
+```js
+        //アロー関数の関数式
+        const cat = () => {
+            return "にゃーにゃー";
+        }
+        //関数catの実行
+        console.log(cat());
+
+
+        //鳴き方を決めたい
+        const animals = (voice) => {//voice = "みゃあみゃあ"
+            return voice;
+        }
+
+        //関数の実行
+        console.log(animals("みゃあみゃあ"));//"みゃあみゃあ"はvoiceに入る
+```
 ## 12月07日
 - 関数式
 ```js
@@ -20,16 +58,6 @@ const 関数名 = function(値){
     処理
 }
 ```
-- 引数
-
-
-## 11月30日
-- 関数
-```js
-```
-## 11月16日
--
-## 11月09日
 - if文
 ```js
 const num = Math.round(Math.random() * 100);
