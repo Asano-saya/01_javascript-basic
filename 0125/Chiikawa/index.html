@@ -26,6 +26,11 @@
     img {
       width: 100%;
     }
+
+    a {
+      color: #000;
+      text-decoration: none;
+    }
   </style>
 </head>
 
@@ -37,13 +42,14 @@
         <dl>
           <dt><span>第0話</span>題名</dt>
           <dd>
-            <a href="https://www.youtube.com/watch?v=Youtubeid">
+            <a href="https://www.youtube.com/watch?v=Youtubeid" >
               <img src="画像へのパス" alt="代替テキスト" />
             </a>
           </dd>
         </dl> -->
     </div>
   </section>
+
 
   <script>
     // story:話, title:題名, image:サムネイル名, id:YouTube動画id
@@ -88,14 +94,20 @@
     for (let i = 0; i < chiikawas.length; i++) {
       console.log(chiikawas[i]);
       const dlElm = document.createElement("dl");
-      const dtElm = `<dt><span>第${chiikawas[i]["story"]}話</span>${chiikawas[i]["title"]}</dt>`;//テンプレートリテラル
+
+
+      const dtElm = `<a href="https://www.youtube.com/watch?v=${chiikawas[i]["id"]} target="_blank"><dt><span>第${chiikawas[i]["story"]}話</span>${chiikawas[i]["title"]}</dt>
+      <dd><img src="./images/${chiikawas[i].image}"><dd></a>`;
       console.log(dtElm);
+
 
       dlElm.innerHTML = dtElm;
       content.appendChild(dlElm);
 
+
       for (let key in chiikawas[i]) {
         console.log(chiikawas[i][key]);
+
       }
     }
 

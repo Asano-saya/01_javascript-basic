@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul class="list">
+        <li>バナナ</li>
+        <li>りんご</li>
+        <li>みかん</li>
+        <li>パイナップル</li>
+    </ul>
+    <button class="resultBtn">結果を表示</button>
+    <ul class="result"></ul>
+    <script>
+        const fruitsArray = ["キウイ", "パパイヤ", "マンゴー"];
+
+        document.querySelector('.list').addEventListener('click', (event) => {
+            if (event.target.tagName === 'LI') {
+                const fruitName = event.target.textContent;
+                if (!fruitsArray.includes(fruitName)) {
+                    fruitsArray.push(fruitName);
+                }
+            }
+        });
+
+        document.querySelector('.resultBtn').addEventListener('click', () => {
+            document.querySelector('.result').innerHTML = fruitsArray.map(fruit => `<li>${fruit}</li>`).join('');
+        });
+    </script>
+
+</body>
+
+</html>
